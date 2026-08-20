@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sessão de Natal — Ivanessa Gemaque Retratos</title>
+<meta name="description" content="Agende sua sessão de fotos de Natal com Ivanessa Gemaque Retratos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="lights" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <span class="wordmark">Ivanessa Gemaque <em>Retratos</em></span>
+    <a class="header-cta" href="#agendar">Agendar sessão</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap">
+    <p class="eyebrow">Edição de Natal · Dezembro</p>
+    <h1>Uma sessão de retratos<br>para guardar o Natal.</h1>
+    <p class="hero-lead">
+      Ensaios em estúdio com luz de vela, retratos em família e presentes que
+      duram mais que a época. Escolha um horário livre na agenda abaixo —
+      a confirmação e o convite chegam direto no seu e-mail.
+    </p>
+  </section>
+
+  <section class="booking" id="agendar">
+    <div class="wrap booking-grid">
+
+      <div class="panel calendar-panel">
+        <div class="panel-head">
+          <h2>1. Escolha o dia</h2>
+          <div class="month-nav">
+            <button type="button" id="prevMonth" aria-label="Mês anterior">‹</button>
+            <span id="monthLabel"></span>
+            <button type="button" id="nextMonth" aria-label="Próximo mês">›</button>
+          </div>
+        </div>
+        <div class="weekdays" id="weekdays"></div>
+        <div class="calendar-grid" id="calendarGrid" aria-live="polite"></div>
+        <p class="legend"><span class="dot"></span> dia com horários livres</p>
+      </div>
+
+      <div class="panel slots-panel">
+        <h2>2. Escolha o horário</h2>
+        <p class="slots-hint" id="slotsHint">Selecione um dia iluminado no calendário.</p>
+        <div class="slots-grid" id="slotsGrid"></div>
+
+        <form id="bookingForm" class="booking-form hidden" novalidate>
+          <h2>3. Seus dados</h2>
+          <label>
+            Nome completo
+            <input type="text" id="clientName" name="name" required autocomplete="name">
+          </label>
+          <label>
+            E-mail
+            <input type="email" id="clientEmail" name="email" required autocomplete="email">
+          </label>
+          <label>
+            WhatsApp / Telefone
+            <input type="tel" id="clientPhone" name="phone" required autocomplete="tel" placeholder="(96) 90000-0000">
+          </label>
+          <div class="selection-summary" id="selectionSummary"></div>
+          <button type="submit" class="confirm-btn" id="confirmBtn">
+            <span>Confirmar sessão</span>
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Ivanessa Gemaque Retratos · Macapá, AP</p>
+    <p class="footer-fine">As confirmações são enviadas automaticamente pelo Google Agenda.</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
