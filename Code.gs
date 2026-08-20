@@ -19,11 +19,11 @@ const CONFIG = {
   SESSION_END: "2026-09-30",
 
   // Horário comercial de atendimento.
-  WORK_START_HOUR: 9,   // 09:00
+  WORK_START_HOUR: 13,   // 13:00
   WORK_END_HOUR: 18,    // último início possível é antes das 18:00
 
   SLOT_MINUTES: 45,     // duração de cada sessão
-  BUFFER_MINUTES: 15,   // intervalo entre sessões, para troca de cenário
+  BUFFER_MINUTES: 20,   // intervalo entre sessões, para troca de cenário
 
   STUDIO_NAME: "Ivanessa Gemaque Retratos",
   CREATE_MEET_LINK: false, // requer o serviço avançado "Calendar API" ativado
