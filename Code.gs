@@ -11,22 +11,22 @@
  */
 
 const CONFIG = {
-  CALENDAR_ID: "SEU_EMAIL@gmail.com",   // ID do Google Agenda (geralmente seu e-mail)
+  CALENDAR_ID: "f3lipe.s@gmail.com",   // ID do Google Agenda (geralmente seu e-mail)
   TIMEZONE: "America/Belem",
 
   // Janela de dias em que a sessão de Natal é oferecida.
-  SESSION_START: "2026-12-01",
-  SESSION_END: "2026-12-24",
+  SESSION_START: "2026-09-01",
+  SESSION_END: "2026-09-30",
 
   // Horário comercial de atendimento.
   WORK_START_HOUR: 9,   // 09:00
   WORK_END_HOUR: 18,    // último início possível é antes das 18:00
 
-  SLOT_MINUTES: 40,     // duração de cada sessão
-  BUFFER_MINUTES: 10,   // intervalo entre sessões, para troca de cenário
+  SLOT_MINUTES: 45,     // duração de cada sessão
+  BUFFER_MINUTES: 15,   // intervalo entre sessões, para troca de cenário
 
   STUDIO_NAME: "Ivanessa Gemaque Retratos",
-  CREATE_MEET_LINK: true, // requer o serviço avançado "Calendar API" ativado
+  CREATE_MEET_LINK: false, // requer o serviço avançado "Calendar API" ativado
 };
 
 /* ============================================================
