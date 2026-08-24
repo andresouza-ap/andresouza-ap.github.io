@@ -31,6 +31,7 @@
     summary: document.getElementById("selectionSummary"),
     status: document.getElementById("formStatus"),
     confirmBtn: document.getElementById("confirmBtn"),
+    whatsappLink: document.getElementById("whatsappLink"),
   };
 
   init();
@@ -132,6 +133,7 @@
     cellEl.classList.add("selected");
 
     el.form.classList.add("hidden");
+    el.whatsappLink.classList.add("hidden");
     el.slotsGrid.innerHTML = "";
     el.slotsHint.textContent = "Carregando horários…";
 
@@ -198,6 +200,7 @@
         el.status.className = "form-status success";
         el.status.textContent =
           "Sessão confirmada! Você vai receber um e-mail do Google Agenda com os detalhes.";
+        showWhatsappLink(payload);
         el.form.reset();
         el.confirmBtn.disabled = true;
         // Refresh slots so the booked time disappears for the next visitor.
@@ -216,6 +219,24 @@
       el.confirmBtn.disabled = false;
       console.error(err);
     }
+  }
+
+  /**
+   * Monta um link wa.me com a mensagem de confirmação já preenchida,
+   * para o cliente enviar ao WhatsApp do estúdio com um toque.
+   */
+  function showWhatsappLink(payload) {
+    const number = (CONFIG.STUDIO_WHATSAPP_NUMBER || "").replace(/\D/g, "");
+    if (!number) return; // não configurado — link fica oculto
+
+    const message =
+      `Olá! Confirmando minha sessão de Natal com ${document.querySelector(".wordmark").textContent.trim()}.\n` +
+      `Nome: ${payload.name}\n` +
+      `Data: ${formatDatePretty(payload.date)}\n` +
+      `Horário: ${payload.time}`;
+
+    el.whatsappLink.href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+    el.whatsappLink.classList.remove("hidden");
   }
 
   // -----------------------------------------------------------
