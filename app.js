@@ -126,6 +126,22 @@
     }
   }
 
+  /**
+   * Recarrega só a lista de horários do dia selecionado (para remover o
+   * horário que acabou de ser reservado), sem esconder o formulário nem
+   * o botão do WhatsApp — diferente de selectDate(), que é usada quando
+   * o cliente troca de dia manualmente.
+   */
+  async function refreshSlotsForSelectedDate() {
+    if (!state.selectedDate) return;
+    try {
+      const data = await apiGet({ action: "slots", date: state.selectedDate });
+      renderSlots(data.slots || []);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   async function selectDate(iso, cellEl) {
     state.selectedDate = iso;
     state.selectedTime = null;
@@ -203,8 +219,9 @@
         showWhatsappLink(payload);
         el.form.reset();
         el.confirmBtn.disabled = true;
-        // Refresh slots so the booked time disappears for the next visitor.
-        selectDate(state.selectedDate, document.querySelector(".day.selected"));
+        // Refresh slots so the booked time disappears for the next visitor,
+        // without hiding the confirmation/WhatsApp button we just showed.
+        refreshSlotsForSelectedDate();
       } else {
         el.status.className = "form-status error";
         el.status.textContent = result.message || "Esse horário acabou de ser reservado. Escolha outro.";
