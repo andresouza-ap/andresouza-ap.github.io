@@ -8,11 +8,11 @@ const CONFIG = {
   WEB_APP_URL: "https://script.google.com/macros/s/SEU_DEPLOYMENT_ID/exec",
 
   // Janela de datas em que a sessão de Natal está disponível.
-  SESSION_START: "2026-12-01",
-  SESSION_END:   "2026-12-24",
+  SESSION_START: "2026-11-26",
+  SESSION_END:   "2026-12-12",
 
   // Duração de cada sessão, em minutos (deve bater com o Code.gs).
-  SLOT_MINUTES: 40,
+  SLOT_MINUTES: 45,
 
   // Número de WhatsApp do estúdio, em formato internacional, só dígitos
   // (código do país + DDD + número). Exemplo para (96) 99999-9999:
