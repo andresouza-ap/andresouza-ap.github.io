@@ -16,5 +16,5 @@ const CONFIG = {
 
   // Número de WhatsApp do estúdio, em formato internacional, só dígitos
   // (código do país + DDD + número). Exemplo para (96) 99999-9999:
-  STUDIO_WHATSAPP_NUMBER: "5596999999999",
+  STUDIO_WHATSAPP_NUMBER: "5596984249472",
 };
