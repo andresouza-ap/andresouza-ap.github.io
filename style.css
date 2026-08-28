@@ -109,7 +109,7 @@ a{ color: inherit; }
   color: var(--ink-muted);
   max-width: 46ch;
   font-size: 1.02rem;
-
+  text-align: justify;
 }
 
 /* ---------------------------------------------
