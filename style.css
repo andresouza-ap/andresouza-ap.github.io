@@ -109,6 +109,7 @@ a{ color: inherit; }
   color: var(--ink-muted);
   max-width: 46ch;
   font-size: 1.02rem;
+  text-align: justify;
 }
 
 /* ---------------------------------------------
@@ -354,6 +355,27 @@ a{ color: inherit; }
 }
 .form-status.error{ color: var(--danger); }
 .form-status.success{ color: var(--gold-light); }
+
+.whatsapp-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 600;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid #2FA946;
+  color: #2FA946;
+  background: rgba(47,169,70,.08);
+  transition: background .15s ease, color .15s ease;
+}
+.whatsapp-btn:hover{
+  background: #2FA946;
+  color: #0E1A12;
+}
+.whatsapp-btn.hidden{ display: none; }
 
 /* ---------------------------------------------
    Footer
